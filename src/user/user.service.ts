@@ -1,12 +1,16 @@
-import {ConflictException, Injectable, NotFoundException,} from '@nestjs/common';
-import {UserEntity} from './entity/user.entity';
-import {Repository} from 'typeorm';
-import {InjectRepository} from '@nestjs/typeorm';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
+import { UserEntity } from './entity/user.entity';
+import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
-import {JwtService} from '@nestjs/jwt';
-import {CurrentEntity} from '../current_tasks/entity/current.entity';
-import {CurrentTasksService} from '../current_tasks/current_tasks.service';
-import {TaskEntity} from '../task/entities/task.entity';
+import { JwtService } from '@nestjs/jwt';
+import { CurrentEntity } from '../current_tasks/entity/current.entity';
+import { CurrentTasksService } from '../current_tasks/current_tasks.service';
+import { TaskEntity } from '../task/entities/task.entity';
 
 @Injectable()
 export class UserService {

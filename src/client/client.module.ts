@@ -4,9 +4,10 @@ import {ClientService} from './client.service';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {ClientEntity} from './entity/client.entity';
 import {ProjectModule} from '../project/project.module';
+import {ProjectEntity} from "../project/entity/project.entity";
 
 @Module({
-  imports: [TypeOrmModule.forFeature([ClientEntity]), ProjectModule],
+  imports: [TypeOrmModule.forFeature([ClientEntity,ProjectEntity]), ProjectModule],
   controllers: [ClientController],
   providers: [ClientService],
 })
