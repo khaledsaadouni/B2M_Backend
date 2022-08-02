@@ -1,12 +1,12 @@
-import {Injectable, NotFoundException} from '@nestjs/common';
-import {Repository} from 'typeorm';
-import {TaskEntity} from './entities/task.entity';
-import {InjectRepository} from '@nestjs/typeorm';
-import {AddTaskDto} from './dto/AddTaskDto';
-import {UpdateTaskDto} from './dto/UpdateTaskDto';
-import {ProjectService} from '../project/project.service';
-import {DaysEntity} from '../days/entity/days.entity';
-import {UserEntity} from '../user/entity/user.entity';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import { TaskEntity } from './entities/task.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { AddTaskDto } from './dto/AddTaskDto';
+import { UpdateTaskDto } from './dto/UpdateTaskDto';
+import { ProjectService } from '../project/project.service';
+import { DaysEntity } from '../days/entity/days.entity';
+import { UserEntity } from '../user/entity/user.entity';
 
 @Injectable()
 export class TaskService {

@@ -1,7 +1,7 @@
-import {Body, Controller, Delete, Get, Param, Post} from '@nestjs/common';
-import {CurrentTasksService} from './current_tasks.service';
-import {CurrentEntity} from './entity/current.entity';
-import {TaskEntity} from '../task/entities/task.entity';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { CurrentTasksService } from './current_tasks.service';
+import { CurrentEntity } from './entity/current.entity';
+import { TaskEntity } from '../task/entities/task.entity';
 
 @Controller('current')
 export class CurrentTasksController {

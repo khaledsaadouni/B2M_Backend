@@ -1,7 +1,14 @@
-import {Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn} from 'typeorm';
-import {Exclude} from 'class-transformer';
-import {TaskEntity} from '../../task/entities/task.entity';
-import {CurrentEntity} from '../../current_tasks/entity/current.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Exclude } from 'class-transformer';
+import { TaskEntity } from '../../task/entities/task.entity';
+import { CurrentEntity } from '../../current_tasks/entity/current.entity';
 
 @Entity('user')
 export class UserEntity {

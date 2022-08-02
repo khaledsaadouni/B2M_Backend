@@ -1,7 +1,16 @@
-import {Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post,} from '@nestjs/common';
-import {DaysService} from './days.service';
-import {DaysEntity} from './entity/days.entity';
-import {UpdateDayDto} from './dto/UpdateDayDt';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseIntPipe,
+  Patch,
+  Post,
+} from '@nestjs/common';
+import { DaysService } from './days.service';
+import { DaysEntity } from './entity/days.entity';
+import { UpdateDayDto } from './dto/UpdateDayDt';
 
 @Controller('days')
 export class DaysController {

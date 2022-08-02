@@ -1,6 +1,6 @@
-import {Entity, OneToMany, OneToOne, PrimaryGeneratedColumn} from 'typeorm';
-import {TaskEntity} from '../../task/entities/task.entity';
-import {UserEntity} from '../../user/entity/user.entity';
+import { Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { TaskEntity } from '../../task/entities/task.entity';
+import { UserEntity } from '../../user/entity/user.entity';
 
 @Entity('current')
 export class CurrentEntity {

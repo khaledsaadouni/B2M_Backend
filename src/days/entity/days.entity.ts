@@ -1,5 +1,5 @@
-import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from 'typeorm';
-import {TaskEntity} from '../../task/entities/task.entity';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { TaskEntity } from '../../task/entities/task.entity';
 
 @Entity('days')
 export class DaysEntity {

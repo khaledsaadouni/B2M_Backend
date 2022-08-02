@@ -1,8 +1,8 @@
-import {Injectable} from '@nestjs/common';
-import {CurrentEntity} from './entity/current.entity';
-import {Repository} from 'typeorm';
-import {InjectRepository} from '@nestjs/typeorm';
-import {TaskEntity} from '../task/entities/task.entity';
+import { Injectable } from '@nestjs/common';
+import { CurrentEntity } from './entity/current.entity';
+import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
+import { TaskEntity } from '../task/entities/task.entity';
 
 @Injectable()
 export class CurrentTasksService {

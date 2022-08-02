@@ -1,8 +1,17 @@
-import {Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post,} from '@nestjs/common';
-import {TaskService} from './task.service';
-import {TaskEntity} from './entities/task.entity';
-import {AddTaskDto} from './dto/AddTaskDto';
-import {UpdateTaskDto} from './dto/UpdateTaskDto';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseIntPipe,
+  Patch,
+  Post,
+} from '@nestjs/common';
+import { TaskService } from './task.service';
+import { TaskEntity } from './entities/task.entity';
+import { AddTaskDto } from './dto/AddTaskDto';
+import { UpdateTaskDto } from './dto/UpdateTaskDto';
 
 @Controller('task')
 export class TaskController {
@@ -37,5 +46,4 @@ export class TaskController {
   async DeleteProject(@Param('id', ParseIntPipe) id: number): Promise<any> {
     return await this.TaskService.RemoveTask(id);
   }
-
 }

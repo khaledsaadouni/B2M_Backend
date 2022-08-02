@@ -1,8 +1,14 @@
-import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn,} from 'typeorm';
-import {TimestampEntity} from '../../generics/timestamp.entity';
-import {TaskEntity} from '../../task/entities/task.entity';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { TimestampEntity } from '../../generics/timestamp.entity';
+import { TaskEntity } from '../../task/entities/task.entity';
 
-import {ClientEntity} from '../../client/entity/client.entity';
+import { ClientEntity } from '../../client/entity/client.entity';
 
 @Entity('project')
 export class ProjectEntity extends TimestampEntity {
