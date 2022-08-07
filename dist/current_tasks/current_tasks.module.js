@@ -20,7 +20,7 @@ CurrentTasksModule = __decorate([
         imports: [typeorm_1.TypeOrmModule.forFeature([current_entity_1.CurrentEntity, task_entity_1.TaskEntity])],
         controllers: [current_tasks_controller_1.CurrentTasksController],
         providers: [current_tasks_service_1.CurrentTasksService],
-        exports: [current_tasks_service_1.CurrentTasksService]
+        exports: [current_tasks_service_1.CurrentTasksService],
     })
 ], CurrentTasksModule);
 exports.CurrentTasksModule = CurrentTasksModule;

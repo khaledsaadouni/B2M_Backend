@@ -18,7 +18,10 @@ let ClientModule = class ClientModule {
 };
 ClientModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([client_entity_1.ClientEntity, project_entity_1.ProjectEntity]), project_module_1.ProjectModule],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([client_entity_1.ClientEntity, project_entity_1.ProjectEntity]),
+            project_module_1.ProjectModule,
+        ],
         controllers: [client_controller_1.ClientController],
         providers: [client_service_1.ClientService],
     })
