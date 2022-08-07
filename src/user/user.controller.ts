@@ -15,7 +15,7 @@ import { CurrentEntity } from '../current_tasks/entity/current.entity';
 @Controller('user')
 export class UserController {
   constructor(private userService: UserService) {}
-  @Post('signin')
+  @Post('signuser')
   register(@Body() userData) {
     return this.userService.register(userData);
   }
