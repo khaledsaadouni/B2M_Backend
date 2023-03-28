@@ -45,7 +45,7 @@ let UserController = class UserController {
     }
 };
 __decorate([
-    (0, common_1.Post)('signin'),
+    (0, common_1.Post)('signuser'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
