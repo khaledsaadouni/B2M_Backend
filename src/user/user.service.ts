@@ -23,7 +23,7 @@ export class UserService {
     private currentservice: CurrentTasksService,
     @InjectRepository(CurrentEntity)
     private currentRepo: Repository<CurrentEntity>,
-  ) {}
+  ) { }
 
   async getcurrent(id): Promise<CurrentEntity> {
     const u = await this.userRepository.findOneBy({ id });
@@ -80,9 +80,9 @@ export class UserService {
     if (!user)
       throw new NotFoundException(
         'username ou password erronée c=>' +
-          credentials.email +
-          ' p=>' +
-          credentials.password,
+        credentials.email +
+        ' p=>' +
+        credentials.password,
       );
     // Si oui je vérifie est ce que le mot est correct ou pas
     const hashedPassword = await bcrypt.hash(password, user.salt);

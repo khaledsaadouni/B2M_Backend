@@ -15,6 +15,7 @@ const days_entity_1 = require("../../days/entity/days.entity");
 const project_entity_1 = require("../../project/entity/project.entity");
 const current_entity_1 = require("../../current_tasks/entity/current.entity");
 const user_entity_1 = require("../../user/entity/user.entity");
+const TaskDayTime_1 = require("../../TaskDayTime/entity/TaskDayTime");
 let TaskEntity = class TaskEntity {
 };
 __decorate([
@@ -42,6 +43,13 @@ __decorate([
     }),
     __metadata("design:type", project_entity_1.ProjectEntity)
 ], TaskEntity.prototype, "project", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)((type) => TaskDayTime_1.TasksDayTime, (tasksDayTime) => tasksDayTime.task, {
+        cascade: true,
+        eager: true,
+    }),
+    __metadata("design:type", Array)
+], TaskEntity.prototype, "tasksDayTimes", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)((type) => current_entity_1.CurrentEntity, (current) => current.tasks),
     __metadata("design:type", current_entity_1.CurrentEntity)

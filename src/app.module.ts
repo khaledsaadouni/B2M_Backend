@@ -8,6 +8,7 @@ import { TestController } from './test/test.controller';
 import { ClientModule } from './client/client.module';
 import { CurrentTasksModule } from './current_tasks/current_tasks.module';
 import { UserModule } from './user/user.module';
+import { TaskDayTimeModule } from './TaskDayTime/TaskDayTime.module';
 
 @Module({
   imports: [
@@ -16,18 +17,19 @@ import { UserModule } from './user/user.module';
     DaysModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'remotemysql.com',
+      host: 'localhost',
       port: 3306,
-      username: 'ozzwefiie1',
-      password: '6NxJo5Dta1',
-      database: 'ozzwefiie1',
-      entities: ['dist/**/*.entity{.ts,.js}'],
-      synchronize: true,
+      username: 'root',
+      password: '',
+      database: 'taskTracker',
+      synchronize: false,
+      autoLoadEntities: true,
     }),
     CurrentTasksModule,
     UserModule,
+    TaskDayTimeModule
   ],
   controllers: [AppController, TestController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

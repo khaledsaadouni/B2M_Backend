@@ -17,6 +17,7 @@ const test_controller_1 = require("./test/test.controller");
 const client_module_1 = require("./client/client.module");
 const current_tasks_module_1 = require("./current_tasks/current_tasks.module");
 const user_module_1 = require("./user/user.module");
+const TaskDayTime_module_1 = require("./TaskDayTime/TaskDayTime.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -27,16 +28,17 @@ AppModule = __decorate([
             days_module_1.DaysModule,
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
-                host: 'remotemysql.com',
+                host: 'localhost',
                 port: 3306,
-                username: 'ozzwefiie1',
-                password: '6NxJo5Dta1',
-                database: 'ozzwefiie1',
-                entities: ['dist/**/*.entity{.ts,.js}'],
-                synchronize: true,
+                username: 'root',
+                password: '',
+                database: 'taskTracker',
+                synchronize: false,
+                autoLoadEntities: true,
             }),
             current_tasks_module_1.CurrentTasksModule,
             user_module_1.UserModule,
+            TaskDayTime_module_1.TaskDayTimeModule
         ],
         controllers: [app_controller_1.AppController, test_controller_1.TestController],
         providers: [app_service_1.AppService],

@@ -23,4 +23,4 @@ import { CurrentEntity } from '../current_tasks/entity/current.entity';
   controllers: [UserController],
   providers: [UserService],
 })
-export class UserModule {}
+export class UserModule { }
