@@ -9,6 +9,7 @@ import { DaysEntity } from '../../days/entity/days.entity';
 import { ProjectEntity } from '../../project/entity/project.entity';
 import { CurrentEntity } from '../../current_tasks/entity/current.entity';
 import { UserEntity } from '../../user/entity/user.entity';
+import { TasksDayTime } from 'src/TaskDayTime/entity/TaskDayTime';
 
 @Entity('task')
 export class TaskEntity {
@@ -27,8 +28,14 @@ export class TaskEntity {
     cascade: true,
   })
   project: ProjectEntity;
+  @OneToMany((type) => TasksDayTime, (tasksDayTime) => tasksDayTime.task, {
+    cascade: true,
+    eager: true,
+  })
+  tasksDayTimes: TasksDayTime[];
   @ManyToOne((type) => CurrentEntity, (current) => current.tasks)
   current: CurrentEntity;
   @ManyToOne((type) => UserEntity, (user) => user.tasks)
   user: UserEntity;
+
 }

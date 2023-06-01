@@ -24,6 +24,12 @@ let TaskController = class TaskController {
     async GetTasks() {
         return this.TaskService.GetTasks();
     }
+    async GetTaskByID(id) {
+        return this.TaskService.GetTaskByID(id);
+    }
+    async GetTaskByIdUser(id) {
+        return this.TaskService.GetTaskByIdUser(id);
+    }
     async GetProjectTask(id) {
         return await this.TaskService.GetTasksProject(id);
     }
@@ -38,11 +44,25 @@ let TaskController = class TaskController {
     }
 };
 __decorate([
-    (0, common_1.Get)('all'),
+    (0, common_1.Get)('/all'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], TaskController.prototype, "GetTasks", null);
+__decorate([
+    (0, common_1.Get)('/getById/:id'),
+    __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], TaskController.prototype, "GetTaskByID", null);
+__decorate([
+    (0, common_1.Get)('/getByIdUser/:id'),
+    __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], TaskController.prototype, "GetTaskByIdUser", null);
 __decorate([
     (0, common_1.Get)('/project/:id'),
     __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),

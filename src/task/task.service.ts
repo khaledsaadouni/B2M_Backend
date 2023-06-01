@@ -18,12 +18,29 @@ export class TaskService {
     private DaysRepo: Repository<DaysEntity>,
     @InjectRepository(UserEntity)
     private userRepository: Repository<UserEntity>,
-  ) {}
+  ) { }
   async GetTasks(): Promise<TaskEntity[]> {
-    return await this.TaskRepo.find();
+    const taskDayTime = await this.TaskRepo
+      .createQueryBuilder('task')
+      .leftJoinAndSelect('task.project', 'project')
+      .getMany()
+    return taskDayTime;
   }
   async GetTaskByID(id: number): Promise<TaskEntity> {
-    return await this.TaskRepo.findOneBy({ id });
+    const taskDayTime = await this.TaskRepo
+      .createQueryBuilder('task')
+      .leftJoinAndSelect('task.project', 'project')
+      .where('task.id = :id', { id })
+      .getOne()
+    return taskDayTime;
+  }
+  async GetTaskByIdUser(id: number): Promise<TaskEntity[]> {
+    const taskDayTime = await this.TaskRepo
+      .createQueryBuilder('task')
+      .leftJoin('task.user', 'user')
+      .where('user.id = :id', { id })
+      .getMany()
+    return taskDayTime;
   }
   async AddTask(
     Task: AddTaskDto,

@@ -5,7 +5,7 @@ import { TaskEntity } from '../task/entities/task.entity';
 
 @Controller('current')
 export class CurrentTasksController {
-  constructor(private currentser: CurrentTasksService) {}
+  constructor(private currentser: CurrentTasksService) { }
   @Get('all/:id')
   async GetCurrent(@Param('id') id: number): Promise<CurrentEntity> {
     return await this.currentser.getCurrent(id);

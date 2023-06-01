@@ -15,10 +15,18 @@ import { UpdateTaskDto } from './dto/UpdateTaskDto';
 
 @Controller('task')
 export class TaskController {
-  constructor(private TaskService: TaskService) {}
-  @Get('all')
+  constructor(private TaskService: TaskService) { }
+  @Get('/all')
   async GetTasks(): Promise<TaskEntity[]> {
     return this.TaskService.GetTasks();
+  }
+  @Get('/getById/:id')
+  async GetTaskByID(@Param('id', ParseIntPipe) id: number,): Promise<TaskEntity> {
+    return this.TaskService.GetTaskByID(id)
+  }
+  @Get('/getByIdUser/:id')
+  async GetTaskByIdUser(@Param('id', ParseIntPipe) id: number,): Promise<TaskEntity[]> {
+    return this.TaskService.GetTaskByIdUser(id)
   }
   @Get('/project/:id')
   async GetProjectTask(

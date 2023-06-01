@@ -11,7 +11,7 @@ export class CurrentTasksService {
     private TaskRepo: Repository<TaskEntity>,
     @InjectRepository(CurrentEntity)
     private currentRepo: Repository<CurrentEntity>,
-  ) {}
+  ) { }
   async getCurrent(id: number): Promise<CurrentEntity> {
     return await this.currentRepo.findOneBy({ id });
   }

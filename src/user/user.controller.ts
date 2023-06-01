@@ -1,13 +1,20 @@
-import {Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post,} from '@nestjs/common';
-import {UserService} from './user.service';
-import {UserEntity} from './entity/user.entity';
-import {CurrentEntity} from '../current_tasks/entity/current.entity';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseIntPipe,
+  Patch,
+  Post,
+} from '@nestjs/common';
+import { UserService } from './user.service';
+import { UserEntity } from './entity/user.entity';
+import { CurrentEntity } from '../current_tasks/entity/current.entity';
 
 @Controller('user')
 export class UserController {
-  constructor(private userService: UserService) {
-  }
-
+  constructor(private userService: UserService) { }
   @Post('signuser')
   register(@Body() userData) {
     return this.userService.register(userData);

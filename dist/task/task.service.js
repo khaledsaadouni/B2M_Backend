@@ -28,10 +28,27 @@ let TaskService = class TaskService {
         this.userRepository = userRepository;
     }
     async GetTasks() {
-        return await this.TaskRepo.find();
+        const taskDayTime = await this.TaskRepo
+            .createQueryBuilder('task')
+            .leftJoinAndSelect('task.project', 'project')
+            .getMany();
+        return taskDayTime;
     }
     async GetTaskByID(id) {
-        return await this.TaskRepo.findOneBy({ id });
+        const taskDayTime = await this.TaskRepo
+            .createQueryBuilder('task')
+            .leftJoinAndSelect('task.project', 'project')
+            .where('task.id = :id', { id })
+            .getOne();
+        return taskDayTime;
+    }
+    async GetTaskByIdUser(id) {
+        const taskDayTime = await this.TaskRepo
+            .createQueryBuilder('task')
+            .leftJoin('task.user', 'user')
+            .where('user.id = :id', { id })
+            .getMany();
+        return taskDayTime;
     }
     async AddTask(Task, projID, id) {
         const p = await this.projectservice.GetProjectById(projID);

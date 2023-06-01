@@ -13,6 +13,7 @@ export declare class TaskService {
     constructor(TaskRepo: Repository<TaskEntity>, projectservice: ProjectService, DaysRepo: Repository<DaysEntity>, userRepository: Repository<UserEntity>);
     GetTasks(): Promise<TaskEntity[]>;
     GetTaskByID(id: number): Promise<TaskEntity>;
+    GetTaskByIdUser(id: number): Promise<TaskEntity[]>;
     AddTask(Task: AddTaskDto, projID: number, id: number): Promise<TaskEntity>;
     UpdateTask(id: number, task: UpdateTaskDto, iddev: number): Promise<TaskEntity>;
     RemoveTask(id: number): Promise<TaskEntity>;
