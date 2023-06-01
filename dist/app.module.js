@@ -32,7 +32,7 @@ AppModule = __decorate([
                 port: 3306,
                 username: 'root',
                 password: '',
-                database: 'taskTracker',
+                database: 'nest_project',
                 synchronize: false,
                 autoLoadEntities: true,
             }),

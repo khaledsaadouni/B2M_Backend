@@ -21,7 +21,7 @@ import { TaskDayTimeModule } from './TaskDayTime/TaskDayTime.module';
       port: 3306,
       username: 'root',
       password: '',
-      database: 'taskTracker',
+      database: 'nest_project',
       synchronize: false,
       autoLoadEntities: true,
     }),
